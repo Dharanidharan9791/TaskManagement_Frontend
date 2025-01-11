@@ -1,33 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
-import Register from './components/Register';
+import LeadsPage from './components/LeadsList';
 import './App.css';
+import './style/leads.css';
+import './style/tasks.css';
 
-function App() {
-  const [activeTab, setActiveTab] = useState('login');
-
+const App = () => {
   return (
-    <div className="container">
-      <div className="tabs">
-        <div
-          className={`tab ${activeTab === 'login' ? 'active' : ''}`}
-          onClick={() => setActiveTab('login')}
-        >
-          Login
-        </div>
-        <div
-          className={`tab ${activeTab === 'register' ? 'active' : ''}`}
-          onClick={() => setActiveTab('register')}
-        >
-          Register
-        </div>
-      </div>
-      <div>
-        {activeTab === 'login' && <Login />}
-        {activeTab === 'register' && <Register />}
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/leads" element={<LeadsPage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

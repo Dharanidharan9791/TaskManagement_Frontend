@@ -1,0 +1,26 @@
+.leads-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.leads-list {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px;
+}
+
+.lead-item {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.lead-item:hover {
+  background-color: #e9e9e9;
+}
