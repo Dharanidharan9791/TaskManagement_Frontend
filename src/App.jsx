@@ -8,7 +8,7 @@ import './style/tasks.css';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/TaskManagement_Frontend">
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/leads" element={<LeadsPage />} />
