@@ -25,6 +25,8 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
+
     try {
       const response = await loginAPI({ email: loginData.email, password: loginData.password });
       localStorage.setItem('token', response.access_token);
@@ -33,10 +35,12 @@ const Login = () => {
     } catch (error) {
       console.error(error);
     }
+    setLoading(false);
   };
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await registerAPI({
         firstName: registerData.firstName,
@@ -48,8 +52,9 @@ const Login = () => {
       alert('Registration successful!');
     } catch (error) {
       console.error(error);
-      alert('Registration failed. Please try again.');
     }
+    setLoading(true);
+
   };
 
   return (
